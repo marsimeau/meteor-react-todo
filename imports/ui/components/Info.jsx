@@ -1,10 +1,13 @@
 import React from 'react'
+import { Meteor } from 'meteor/meteor'
 import { useTracker } from 'meteor/react-meteor-data'
-import { LinksCollection } from '../../api/links'
+import { Links } from '../../api/links'
 
 const Info = () => {
   const links = useTracker(() => {
-    return LinksCollection.find().fetch()
+    Meteor.subscribe('links')
+
+    return Links.find().fetch()
   })
 
   return (
