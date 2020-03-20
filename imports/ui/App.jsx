@@ -1,15 +1,15 @@
 import React from 'react'
+import { BrowserRouter as Router } from 'react-router-dom'
 import { Global } from '@emotion/core'
 import { global } from '/imports/styles'
-import Hello from './components/Hello.jsx'
-import Info from './components/Info.jsx'
+import MainLayout from '/imports/ui/layouts/MainLayout'
 
 export const App = () => (
   <div>
     {/* Global styles */}
     <Global styles={global} />
-    <h1>Welcome to Meteor!</h1>
-    <Hello/>
-    <Info/>
+    <Router>
+      <MainLayout />
+    </Router>
   </div>
 )
