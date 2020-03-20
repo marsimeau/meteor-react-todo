@@ -1,0 +1,2 @@
+// Seed DB
+import './seed'
