@@ -22,6 +22,7 @@ check
 dynamic-import
 email
 service-configuration
+tracker
 
 # Accounts
 
@@ -43,7 +44,6 @@ tap:i18n-db
 digilord:faker
 jabbslad:basic-auth
 mdg:validated-method
-okgrow:analytics
 gadicohen:robots-txt
 gadicohen:sitemaps
 deanius:promise
