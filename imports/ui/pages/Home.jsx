@@ -1,10 +1,13 @@
 import React from 'react'
+import Container from '/imports/ui/components/grid/Container'
 
 const Home = () => {
   return (
-    <h1>
-      Meteor React Todo
-    </h1>
+    <Container>
+      <h1>
+        Meteor React Todos
+      </h1>
+    </Container>
   )
 }
 
