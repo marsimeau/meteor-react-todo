@@ -1,5 +1,5 @@
 import { css } from '@emotion/core'
-import { breakpoints, containers } from './variables'
+import { breakpoints, containerWidths } from './variables'
 import { breakpointUp } from './utils'
 
 export const container = css`
@@ -8,16 +8,14 @@ export const container = css`
   margin-right: auto;
 
   ${Object.keys(breakpoints).map((breakpoint) => {
-    const container = containers[breakpoint]
+    const containerWidth = containerWidths[breakpoint]
 
-    if (!container) {
+    if (!containerWidth) {
       return null
     }
 
-    return css`
-      @media ${breakpointUp(breakpoint)} {
-        max-width: ${container}px;
-      }
-    `
+    return breakpointUp(breakpoint, css`
+      max-width: ${containerWidth}px;
+    `)
   })}
 `

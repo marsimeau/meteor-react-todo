@@ -6,7 +6,7 @@ export const breakpoints = {
   xl: 1200
 }
 
-export const containers = {
+export const containerWidths = {
   sm: 540,
   md: 720,
   lg: 960,
