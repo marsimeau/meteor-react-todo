@@ -1,4 +1,7 @@
 export default {
+  fontFamily: {
+    base: 'Source Sans Pro, sans-serif'
+  },
   colors: {
     white: '#fff',
     primary: '#5d2e8c'
