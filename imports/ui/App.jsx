@@ -1,11 +1,13 @@
 import React from 'react'
 import { BrowserRouter as Router } from 'react-router-dom'
 import { Global } from '@emotion/core'
-import { ThemeProvider, useGlobalStyles } from '/imports/styles'
-import MainLayout from '/imports/ui/layouts/MainLayout'
+import { Provider } from 'react-redux'
+import store from '../store'
+import useGlobalStyle from '../styles/global'
+import MainLayout from './layouts/MainLayout'
 
 const GlobalStyles = () => {
-  const globalStyles = useGlobalStyles()
+  const globalStyles = useGlobalStyle()
 
   return (
     <Global styles={globalStyles} />
@@ -14,11 +16,11 @@ const GlobalStyles = () => {
 
 export const App = () => (
   <div>
-    <ThemeProvider>
+    <Provider store={store}>
       <GlobalStyles />
       <Router>
         <MainLayout />
       </Router>
-    </ThemeProvider>
+    </Provider>
   </div>
 )

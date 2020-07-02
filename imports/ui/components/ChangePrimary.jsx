@@ -1,15 +1,18 @@
 import React from 'react'
-import { useTheme } from '../../styles'
+import { useDispatch, useSelector } from 'react-redux'
+import { actions } from '../../store/theme'
+import { getPrimary } from '../../store/theme/selectors'
 
 const ChangePrimary = () => {
-  const { colors } = useTheme()
+  const primary = useSelector(getPrimary)
+  const dispatch = useDispatch()
 
   const handleColorChange = (event) => {
-    colors.setPrimary(event.target.value)
+    dispatch(actions.setPrimary(event.target.value))
   }
 
   return (
-    <input type="color" value={colors.primary} onChange={handleColorChange} />
+    <input type="color" value={primary} onChange={handleColorChange} />
   )
 }
 

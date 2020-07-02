@@ -1,11 +1,11 @@
 import React, { useState } from 'react'
-import { useButton } from '../../styles'
+import { useButtonStyle } from '../../styles/components/buttons'
 import ChangePrimary from './ChangePrimary'
 
 const Hello = () => {
   const [counter, setCounter] = useState(0)
 
-  const button = useButton()
+  const button = useButtonStyle()
 
   const increment = () => {
     setCounter(counter + 1)

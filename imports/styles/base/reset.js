@@ -1,6 +1,6 @@
 import { css } from '@emotion/core'
 
-export const useResetStyles = () => css`
+export default () => css`
   ul,
   ol {
     list-style: none;

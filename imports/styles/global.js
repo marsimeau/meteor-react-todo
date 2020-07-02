@@ -1,18 +1,17 @@
 import { css } from '@emotion/core'
-import { useTheme } from '../theme'
-import { useResetStyles } from './reset'
+import theme from './theme'
+import useResetStyle from './base/reset'
 
-export const useGlobalStyles = () => {
-  const { fontFamily } = useTheme()
-
-  const resetStyles = useResetStyles()
+export default () => {
+  const { fontFamily } = theme
+  const resetStyle = useResetStyle()
 
   return css`
     /* Font imports */
     @import url('https://fonts.googleapis.com/css2?family=Source+Sans+Pro&display=swap');
 
     /* Resets */
-    ${resetStyles}
+    ${resetStyle}
 
     /* General styles */
     html {

@@ -1,8 +1,8 @@
 import React from 'react'
-import { useContainer } from '/imports/styles'
+import { useContainerStyle } from '../../../styles/base/grid'
 
 const Container = ({ children }) => {
-  const container = useContainer()
+  const container = useContainerStyle()
 
   return (
     <div css={container}>
