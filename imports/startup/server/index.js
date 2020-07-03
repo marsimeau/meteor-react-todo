@@ -2,4 +2,4 @@
 import './seed'
 
 // Register API
-import '/imports/api/links/server'
+import '../../api/links/server'

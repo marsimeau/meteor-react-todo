@@ -1,2 +1,2 @@
 // Register API
-import '/imports/api/links'
+import '../api/links'
