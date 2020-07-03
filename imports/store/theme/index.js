@@ -1,6 +1,6 @@
 import { createSlice } from '@reduxjs/toolkit'
 import reducers from './reducers'
-import theme from '../../styles/theme'
+import theme from '../../../theme'
 
 const slice = createSlice({
   name: 'theme',
