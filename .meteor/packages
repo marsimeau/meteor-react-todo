@@ -21,6 +21,7 @@ dynamic-import@0.5.2
 email@1.2.3
 service-configuration@1.0.11
 tracker@1.2.0
+webapp
 
 # Accounts
 

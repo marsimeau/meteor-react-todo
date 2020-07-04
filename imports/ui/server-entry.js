@@ -14,9 +14,7 @@ onPageLoad((sink) => {
 
   // Render Meta Data
 
-  const { htmlAttributes, title, meta, link } = Helmet.renderStatic()
-
-  sink.request.htmlAttributes = htmlAttributes
+  const { title, meta, link } = Helmet.renderStatic()
 
   sink.appendToHead(title.toString() + meta.toString() + link.toString())
 
