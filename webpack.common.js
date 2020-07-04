@@ -1,6 +1,5 @@
 /* global isDev */
 const meteorExternals = require('webpack-meteor-externals')
-const HtmlWebpackPlugin = require('html-webpack-plugin')
 
 // Import .babelrc because of a bug causing it to be ignored
 const babelConfig = require('./.babelrc')
@@ -60,11 +59,6 @@ module.exports = (isClient) => ({
       }
     ]
   },
-  plugins: [
-    new HtmlWebpackPlugin({
-      template: './imports/ui/template.html'
-    })
-  ],
   resolve: {
     extensions: ['*', '.js', '.jsx']
   },

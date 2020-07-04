@@ -3,8 +3,9 @@
   "private": true,
   "scripts": {
     "start": "meteor run",
+    "serve:dist": "cross-env ROOT_URL=http://localhost:3000 PORT=3000 MONGO_URL=mongodb://localhost:27017/meteor_react_todo node dist/bundle/main.js --production",
     "test": "meteor test --once --driver-package meteortesting:mocha",
-    "test-app": "TEST_WATCH=1 meteor test --full-app --driver-package meteortesting:mocha",
+    "test-app": "cross-env TEST_WATCH=1 meteor test --full-app --driver-package meteortesting:mocha",
     "lint": "eslint . --ext .js --ext .jsx",
     "lint:fix": "npm run lint -- --fix",
     "visualize": "meteor --production --extra-packages bundle-visualizer"
@@ -19,6 +20,7 @@
     "bcrypt": "^4.0.1",
     "bootstrap": "^4.5.0",
     "core-js": "^3.6.5",
+    "cross-env": "^7.0.2",
     "emotion": "^10.0.27",
     "meteor-node-stubs": "^1.0.0",
     "react": "^16.13.0",
