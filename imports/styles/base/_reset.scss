@@ -1,0 +1,115 @@
+// Reset
+//
+// Add default elements style here
+
+html,
+body {
+  height: 100%;
+}
+
+html {
+  font-size: #{$font-size-root}px;
+
+  // Scale after max-width is reached
+  // Will only work if rem units are used instead of px
+  @if ($max-viewport-width) {
+    $rem-screen-ratio: $font-size-root / ($max-viewport-width / 1px);
+
+    @media (min-width: $max-viewport-width) {
+      font-size: 100vw * $rem-screen-ratio;
+    }
+
+    // Stop scaling after max scale width is reached
+    @if ($max-scale-width) {
+      @media (min-width: $max-scale-width) {
+        font-size: $max-scale-width * $rem-screen-ratio;
+      }
+    }
+  }
+}
+
+body {
+  @include t-body;
+}
+
+p,
+h1,
+h2,
+h3,
+h4,
+h5,
+h6,
+ul,
+ol {
+  margin: 0;
+}
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+  font-size: inherit;
+  font-weight: inherit;
+  letter-spacing: inherit;
+  line-height: inherit;
+}
+
+ul {
+  @include list-unstyled;
+}
+
+picture {
+  display: block;
+}
+
+img {
+  display: block;
+  max-width: 100%;
+}
+
+a {
+  color: $link-color;
+  transition: color $transition-base;
+
+  &:hover {
+    color: $link-hover-color;
+    text-decoration: none;
+  }
+}
+
+button,
+input[type=button],
+input[type=submit] {
+  background: transparent;
+  border: 0;
+  border-radius: 0;
+  color: inherit;
+  cursor: pointer;
+  font-family: inherit;
+  font-size: inherit;
+  font-weight: inherit;
+  padding: 0;
+
+  &::-moz-focus-inner {
+    border: 0;
+    padding: 0;
+  }
+
+  &:focus {
+    outline: none;
+  }
+}
+
+@if ($selection-color) {
+  ::selection {
+    background: $selection-color;
+    color: $selection-text-color;
+  }
+
+  ::-moz-selection {
+    background: $selection-color;
+    color: $selection-text-color;
+  }
+}

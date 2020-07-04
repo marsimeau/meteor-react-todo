@@ -1,4 +1,4 @@
-import 'core-js/stage/4'
+import 'core-js/stable'
 
 import '../imports/startup'
 import '../imports/startup/client'

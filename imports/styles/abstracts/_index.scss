@@ -1,0 +1,19 @@
+// Abstracts
+// Injected in all sass imports.
+//
+// IMPORTANT:
+// Do not declare selectors in abstracts files
+// to avoid style duplication.
+//
+// https://sass-guidelin.es/#abstracts-folder
+//
+
+@import 'functions';
+@import 'variables';
+@import 'mixins';
+
+// Bootstrap abstracts
+
+@import '~bootstrap/scss/functions';
+@import '~bootstrap/scss/variables';
+@import '~bootstrap/scss/mixins';

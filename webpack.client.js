@@ -3,7 +3,9 @@ const merge = require('webpack-merge')
 const common = require('./webpack.common')
 const HtmlWebpackPlugin = require('html-webpack-plugin')
 
-// Hack: since .babelrc is ignored (bug) we import here
+const isDev = process.env.NODE_ENV !== 'production'
+
+// Import .babelrc because of a bug causing it to be ignored
 const babelConfig = require('./.babelrc')
 
 module.exports = merge(common, {
@@ -18,6 +20,11 @@ module.exports = merge(common, {
           options: babelConfig
         }
       },
+      // {
+      //   test: /\.(js|jsx)$/,
+      //   use: 'react-hot-loader/webpack',
+      //   include: /node_modules/
+      // },
       {
         test: /\.((c|sa|sc)ss)$/i,
         use: [
@@ -25,16 +32,30 @@ module.exports = merge(common, {
           {
             loader: 'css-loader',
             options: {
+              sourceMap: process.env.NODE_ENV !== 'production',
               importLoaders: 1,
               modules: {
-                localIdentName: process.env.NODE_ENV === 'production'
+                localIdentName: !isDev
                   ? '[hash:base64]'
-                  : '[name]__[local]--[hash:base64:5]'
+                  : '[name]__[local]--[hash:base64:5]',
+                mode: (resourcePath) => {
+                  if (/styles\/[^/]+.scss$/i.test(resourcePath)) {
+                    return 'global'
+                  }
+
+                  return 'local'
+                }
               }
             }
           },
           {
-            loader: 'sass-loader'
+            loader: 'sass-loader',
+            options: {
+              additionalData: '@import "imports/styles/abstracts";',
+              sassOptions: {
+                includePaths: [__dirname, 'imports']
+              }
+            }
           }
         ]
       },

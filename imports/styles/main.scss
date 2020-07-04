@@ -1,0 +1,25 @@
+// Global styles
+//
+// https://sass-guidelin.es/#architecture
+
+//
+// Vendors
+//
+// https://sass-guidelin.es/#vendors-folder
+//
+
+@import 'vendors/bootstrap';
+
+//
+// Vendors Extensions
+//
+
+//
+// Base
+//
+// https://sass-guidelin.es/#base-folder
+//
+
+@import 'base/animations';
+@import 'base/reset';
+@import 'base/typography';

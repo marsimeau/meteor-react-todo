@@ -10,7 +10,7 @@ const Hello = () => {
 
   return (
     <div>
-      <button className="c-button" onClick={increment}>Click Me</button>
+      <button onClick={increment}>Click Me</button>
       <p>You've pressed the button {counter} times.</p>
       <ChangePrimary />
     </div>
