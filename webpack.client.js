@@ -20,11 +20,6 @@ module.exports = merge(common, {
           options: babelConfig
         }
       },
-      // {
-      //   test: /\.(js|jsx)$/,
-      //   use: 'react-hot-loader/webpack',
-      //   include: /node_modules/
-      // },
       {
         test: /\.((c|sa|sc)ss)$/i,
         use: [
