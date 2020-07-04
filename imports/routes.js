@@ -10,7 +10,7 @@ const renderPage = (Page, Fallback = Loading) => {
   )
 }
 
-const Home = loadable(() => import('./ui/pages/Home/Home'))
+const Home = loadable(() => import('./ui/pages/Home'))
 
 export const mainLayoutRoutes = [
   {
