@@ -1,11 +1,13 @@
 import React from 'react'
-import Container from '../components/grid/Container'
-import Hello from '../components/Hello'
+import Container from '../../components/grid/Container'
+import Hello from '../../components/Hello'
+
+import { heading } from './Home.scss'
 
 const Home = () => {
   return (
     <Container>
-      <h1>
+      <h1 className={heading}>
         Meteor React Todo
       </h1>
       <Hello />
