@@ -10,9 +10,11 @@ const slice = createSlice({
   reducers
 })
 
-export const { actions } = slice
+export const {
+  setPrimary
+} = slice.actions
 
-export * as operations from './operations'
-export * as selectors from './selectors'
+export * from './operations'
+export * from './selectors'
 
 export default slice.reducer
