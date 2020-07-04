@@ -1,21 +1,10 @@
 import React from 'react'
-import loadable from '@loadable/component'
-import Loading from '../imports/ui/components/Loading'
-
-const renderPage = (Page, Fallback = Loading) => {
-  return (
-    <div>
-      <Page fallback={<Fallback />} />
-    </div>
-  )
-}
-
-const Home = loadable(() => import('./ui/pages/Home'))
+import Home from './ui/pages/Home'
 
 export const mainLayoutRoutes = [
   {
     exact: true,
     path: '/',
-    render: () => renderPage(Home)
+    render: () => <Home />
   }
 ]

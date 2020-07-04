@@ -1,10 +1,10 @@
-import React from 'react'
-import { Meteor } from 'meteor/meteor'
-import { render } from 'react-dom'
-import App from './App'
-
 import '../styles/main.scss'
 
+import React from 'react'
+import { Meteor } from 'meteor/meteor'
+import { hydrate } from 'react-dom'
+import App from './App.client'
+
 Meteor.startup(() => {
-  render(<App/>, document.getElementById('react-target'))
+  hydrate(<App/>, document.getElementById('react-target'))
 })
