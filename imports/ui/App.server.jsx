@@ -5,13 +5,11 @@ import store from '../store'
 import MainLayout from './layouts/MainLayout'
 
 const App = ({ location }) => (
-  <div>
-    <Provider store={store}>
-      <Router location={location}>
-        <MainLayout />
-      </Router>
-    </Provider>
-  </div>
+  <Provider store={store}>
+    <Router location={location}>
+      <MainLayout />
+    </Router>
+  </Provider>
 )
 
 export default App

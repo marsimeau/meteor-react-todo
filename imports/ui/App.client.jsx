@@ -6,13 +6,11 @@ import store from '../store'
 import MainLayout from './layouts/MainLayout'
 
 const App = () => (
-  <div>
-    <Provider store={store}>
-      <Router>
-        <MainLayout />
-      </Router>
-    </Provider>
-  </div>
+  <Provider store={store}>
+    <Router>
+      <MainLayout />
+    </Router>
+  </Provider>
 )
 
 export default hot(App)
