@@ -1,9 +1,14 @@
 import React from 'react'
 import { Helmet } from 'react-helmet'
 import Container from '../../components/grid/Container'
-import Hello from '../../components/Hello'
+import TaskList from '../../components/TaskList'
 
 import { heading } from './Home.scss'
+
+const tasks = [
+  { _id: 1, name: 'Foo', done: false },
+  { _id: 2, name: 'Bar', done: true }
+]
 
 const Home = () => {
   return (
@@ -13,9 +18,9 @@ const Home = () => {
       </Helmet>
       <Container>
         <h1 className={heading}>
-          Meteor React Todo
+          Todo list
         </h1>
-        <Hello />
+        <TaskList id="homeTasks" tasks={tasks} />
       </Container>
     </>
   )

@@ -1,0 +1,60 @@
+$border: 1px solid $gray-300;
+
+.list {
+  border-radius: rem(4);
+  border: $border;
+  background-color: $gray-100;
+  box-shadow: rem(2) rem(4) rem(4) rgba($black, 0.2);
+  overflow: hidden;
+}
+
+.item {
+  background-color: $white;
+  border-bottom: $border;
+
+  &:last-child {
+    margin-bottom: -1px;
+  }
+}
+
+.task {
+  background-color: $gray-100;
+  padding: rem(5) rem(10);
+
+  &.is-completed {
+    background-color: $white;
+  }
+}
+
+.checkbox {
+  @include sr-only;
+}
+
+.checkbox-label {
+  display: flex;
+  cursor: pointer;
+
+  &:before {
+    content: '';
+    display: block;
+    height: rem(24);
+    width: rem(24);
+    border-radius: 2px;
+    background-color: $white;
+    border: 1px solid $gray-400;
+    margin-right: rem(12);
+  }
+
+  .checkbox:checked + & {
+    &::before {
+      color: $white;
+      background-color: $primary;
+    }
+  }
+
+  .checkbox:disabled + & {
+    &::before {
+      opacity: 0.5;
+    }
+  }
+}
