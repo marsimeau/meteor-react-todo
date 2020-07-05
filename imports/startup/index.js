@@ -1,2 +1,2 @@
 // Register API
-import '../api/links'
+import '../api/tasks'

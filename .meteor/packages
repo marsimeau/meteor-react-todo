@@ -12,7 +12,7 @@ standard-minifier-css@1.6.0         # CSS minifier run for production mode
 standard-minifier-js@2.6.0    # JS minifier run for production mode
 shell-server@0.5.0            # Server-side component of the `meteor shell` command
 
-react-meteor-data       # React higher-order component for reactively tracking Meteor data
+fix-lazy-packages       # https://github.com/ardatan/meteor-webpack/issues/40
 
 # Meteor add-ons
 
@@ -22,6 +22,8 @@ email@1.2.3
 service-configuration@1.0.11
 tracker@1.2.0
 webapp
+
+react-meteor-data       # React higher-order component for reactively tracking Meteor data
 
 # Accounts
 

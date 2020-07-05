@@ -27,7 +27,7 @@ const TaskList = ({ id, tasks, readonly, onChange, onAdd }) => {
     <div className={s.wrapper}>
       <ul id={id} className={s.list}>
         {tasks.map(task => (
-          <li className={s.item}>
+          <li className={s.item} key={getCheckboxId(task._id)}>
             <div className={classnames(s.task, { [s.isCompleted]: task.done })}>
               <input
                 type="checkbox"
@@ -44,9 +44,6 @@ const TaskList = ({ id, tasks, readonly, onChange, onAdd }) => {
                 <Icon className={s.checkboxBox}>check</Icon>
                 {task.name}
               </label>
-              <div className={s.private}>
-                {task.private}
-              </div>
             </div>
           </li>
         ))}

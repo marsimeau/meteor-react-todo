@@ -2,7 +2,7 @@
 import './seed'
 
 // Register API
-import '../../api/links/server'
+import '../../api/tasks/server'
 
 // Server hooks
 import './hooks'
