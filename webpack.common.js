@@ -25,6 +25,7 @@ module.exports = (isClient) => ({
               sourceMap: isDev,
               importLoaders: 1,
               onlyLocals: !isClient,
+              localsConvention: 'camelCase',
               modules: {
                 localIdentName: !isDev
                   ? '[hash:base64]'
