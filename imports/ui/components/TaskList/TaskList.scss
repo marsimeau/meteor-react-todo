@@ -18,43 +18,61 @@ $border: 1px solid $gray-300;
 }
 
 .task {
-  background-color: $gray-100;
+  background-color: $white;
   padding: rem(5) rem(10);
 
   &.is-completed {
-    background-color: $white;
+    background-color: $gray-100;
   }
 }
 
-.checkbox {
+.checkbox-input {
   @include sr-only;
 }
 
 .checkbox-label {
   display: flex;
   cursor: pointer;
+}
 
-  &:before {
-    content: '';
-    display: block;
-    height: rem(24);
-    width: rem(24);
-    border-radius: 2px;
-    background-color: $white;
-    border: 1px solid $gray-400;
-    margin-right: rem(12);
+.checkbox-box {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  height: rem(24);
+  width: rem(24);
+  font-size: rem(16);
+  border-radius: 2px;
+  background-color: $white;
+  border: 1px solid $gray-400;
+  margin-right: rem(12);
+
+  .checkbox-input:checked + .checkbox-label & {
+    color: $white;
+    background-color: $primary;
   }
 
-  .checkbox:checked + & {
-    &::before {
-      color: $white;
-      background-color: $primary;
-    }
+  .checkbox-input:disabled + .checkbox-label & {
+    opacity: 0.5;
   }
+}
 
-  .checkbox:disabled + & {
-    &::before {
-      opacity: 0.5;
-    }
-  }
+.add-wrapper {
+  display: flex;
+  justify-content: center;
+  margin-top: rem(24);
+}
+
+.add-button {
+  box-shadow: rem(2) rem(4) rem(4) rgba($black, 0.2);
+  color: $white;
+  align-items: center;
+  justify-content: center;
+  background-color: $primary;
+  display: flex;
+  border-radius: 50%;
+  height: rem(48);
+  width: rem(48);
+  font-size: rem(24);
+  line-height: 1;
 }
