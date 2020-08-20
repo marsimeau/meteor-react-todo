@@ -17,7 +17,7 @@
     "@babel/runtime": "^7.10.4",
     "@hot-loader/react-dom": "^16.13.0",
     "@reduxjs/toolkit": "^1.4.0",
-    "bcrypt": "^4.0.1",
+    "bcrypt": "^5.0.0",
     "bootstrap": "^4.5.0",
     "classnames": "^2.2.6",
     "core-js": "^3.6.5",
